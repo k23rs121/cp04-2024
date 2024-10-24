@@ -232,7 +232,9 @@
             analog(rest);
             if(rest <= 0){
                 active = false;
-                alarm();
+                for(var i=0; i<10; i++){
+                    alarm();
+                }
             }
         }
     } 
