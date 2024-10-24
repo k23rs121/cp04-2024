@@ -163,8 +163,8 @@
     
     // ボタンの初期設定
     function init(){
-        $('#btnA').prop('disabled', false);
-        $('#btnB').prop('disabled', false);
+        $('#btnA').prop('disabled', true);
+        $('#btnB').prop('disabled', true);
         $('#btnC').prop('disabled', false);
         $('#btnD').prop('disabled', true);
         
@@ -190,6 +190,7 @@
         startTime = new Date();
         $("#btnA").prop("disabled",true);
         $("#btnB").prop("disabled",false);
+        $("#btnD").prop("disabled",true);
     }
 
     // ButtonBがクリックされた時の処理
@@ -197,6 +198,7 @@
         active = false;
         $("#btnA").prop("disabled",false);
         $("#btnB").prop("disabled",true);
+        $("#btnD").prop("disabled",false);
         
     }
 
@@ -208,14 +210,15 @@
         $("time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
         $("#btnA").prop("disabled",false);
-        $("#btnB").prop("disabled",false);
+        $("#btnB").prop("disabled",true);
     }
     
     // ButtonDがクリックされた時の処理
     function btnDClick(e){
-        active = false;
+        active = true;
         $("#btnA").prop("disabled",false);
         $("#btnB").prop("disabled",false);
+        $("#btnD").prop("disabled",true);
         
     }
  
@@ -231,9 +234,6 @@
                 active = false;
                 alarm();
             }
-            //if(etime % 2 == 0){
-            //    $("#time").css(color: #0000ff;)
-            //}
         }
     } 
 
@@ -244,6 +244,7 @@
 
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
+    <div id="Str">○</div>
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
